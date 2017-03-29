@@ -1,3 +1,4 @@
+'use strict';
 // Создание покемона
 
 class Pokemon {
@@ -49,10 +50,24 @@ found.add('Igor', 14);
 
 // Переместим 'Maximus' из lost в found
 
-let removed = lost.splice(1, 1);
+let removed = (lost.splice(1, 1)[0]);
 found.splice(1, 0, removed);
 
 // Отобразим результат в консоль
 
-console.log(lost);
-console.log(found);
+// console.log(lost);
+// console.log(found);
+
+function getRandomElem (min, max){
+  let rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    return rand;
+}
+let numbers = [];
+for (let i = 0; i < 3; i++){
+  let numb = getRandomElem(1, 13);
+  numbers.push(numb);
+}
+// console.log(numbers);
+
+module.exports = found;
